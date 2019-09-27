@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="sr-Latn-BA">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Izračunavanje potrebne količine sredstva za hlađenje hladnjače</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.js"></script>
+    <style>
+        input:required,
+        select:required {
+            border: 3px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-flex py-4 mb-2">
+        <h2>Izračunavanje potrebne količine sredstva za hlađenje vagona-hladnjače</h2>
+    </div>
+    <div class="container-fluid py-1">
+        <div class="row">
+            <div class="col-sm-5 text-justify">
+                <h3>Uputstvo:</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Popunjavaju se sva polja uokvirena crvenom bojom</li>
+                    <li class="list-group-item">U polja <span class="font-weight-bold font-italic">Masa robe</span> i <span class="font-weight-bold font-italic">Trajanje prevoza u časovima</span> upisuju se samo pozitivne vrednosti, dok se u polja <span class="font-weight-bold font-italic">Spoljna (vanjska) temperatura</span> i <span class="font-weight-bold font-italic">Temperatura proizvoda</span> mogu upisivati i negativne vrijednosti. </li>
+                    <li class="list-group-item">U aplikaciju se unose i prikazuju cijeli brojevi.</li>
+                    <li class="list-group-item">Nije potrebno vršiti pretvaranje fizičkih veličina (npr. <span class="font-italic">sate u minute ili sekunde</span> i <span class="font-italic">kilograme u grame</span>)</li>
+                </ul>
+            </div>
+            <div class="col-sm-7">
+                <div class="table-responsive">
+                    <form>
+                        <table class="table table-sm table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td class="align-middle font-weight-bold"><label for="vrs">Vrsta rashladnog sredstva</label></td>
+                                    <td><select id="vrs" class="form-control" required>
+                                            <option selected disabled>Izaberite vrstu rashladnog sredstva</option>
+                                            <option value="80">Vodeni led</option>
+                                            <option value="150">Suvi led</option>
+                                            <option value="96.5">Tečni azot</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle font-weight-bold"><label for="gd">Godišnje doba</label></td>
+                                    <td><select id="gd" class="form-control" required>
+                                            <option selected disabled>Izaberite godišnje doba</option>
+                                            <option value="0.06">Ljeto</option>
+                                            <option value="0.01">Zima</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle font-weight-bold"><label for="mr">Masa robe [kg]</label></td>
+                                    <td><input type="number" id="mr" class="form-control" min="1" value="" skip="1" required /></td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle font-weight-bold"><label for="tp">Trajanje prevoza u časovima [h]</label></td>
+                                    <td><input type="number" id="tp" class="form-control" min="1" value="" skip="1" required /></td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle font-weight-bold"><label for="ts">Spoljna (vanjska) temperatura[&#8451;]</label></td>
+                                    <td><input type="number" id="ts" class="form-control" value="" skip="1" required /></td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle font-weight-bold"><label for="tpr">Temperatura proizvoda [&#8451;]</label></td>
+                                    <td><input type="number" id="tpr" class="form-control" min="-50" max="50" value="" skip="1" required /></td>
+                                </tr>
+                                <tr>
+                                    <td class="align-middle font-weight-bold"><label for="str">Specifična toplota robe [kcal/kg &#8451;]</label></td>
+                                    <td><select id="str" class="form-control" required>
+                                            <option selected disabled>Vrsta namirnice</option>
+                                            <option value="0.92">Svježe voće</option>
+                                            <option value="0.82">Riba</option>
+                                            <option value="0.80">Zaklana živina, margarin</option>
+                                            <option value="0.76">Jaja</option>
+                                            <option value="0.64">Sir</option>
+                                            <option value="0.40">Ulje</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><input type="button" class="btn btn-primary" value="Izračunaj" onclick="izracunaj()" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                    <div id="rezultat"></div>
+                    <div id="rezultat2"></div>
+                    <div id="rezultat3"></div>
+                    <div id="rezultat4"></div>
+                    <div id="rezultat5"></div>
+                    <div id="rezultat6"></div>
+                </div>
+            </div>
+        </div>
+</body>
+<script src="skripta.js"></script>
+
+</html>
