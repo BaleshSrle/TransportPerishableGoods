@@ -11,7 +11,7 @@ function izracunaj() {
         alert("Unos nije dozvoljen.\nMolimo vas da pažljivo pročitate uputstvo.");
     }
     
-    if (f < -50 || f > 50 ) {
+    if (f < -50 || f > 50 || e < -50 || e > 50) {
         alert("Unos nije dozvoljen.\nDozvoljena vrednost je u rasponu između -50 i +50.");
     }
     
