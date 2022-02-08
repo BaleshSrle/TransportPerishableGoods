@@ -7,12 +7,8 @@ function izracunaj() {
     var f = $("#tpr").val();
     var g = $("#str").val();
 
-    if (c <= 0 || c == "e" ||  d <= 0 || d == "e" || e == "e" || f == "e" ) {
+    if (c <= 0 || c == "e" ||  d <= 0 || d == "e") {
         alert("Unos nije dozvoljen.\nMolimo vas da pažljivo pročitate uputstvo.");
-    }
-    
-    if (f < -50 || f > 50 || e < -50 || e > 50) {
-        alert("Unos nije dozvoljen.\nDozvoljena vrednost je u rasponu između -50 i +50.");
     }
     
     var j = e - f; /* j - temperaturna razlika (razlika između spoljne temperature i temperature proizvoda)*/

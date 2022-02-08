@@ -6,100 +6,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.0/font/bootstrap-icons.min.css">
     <title>Izračunavanje potrebne količine sredstva za hlađenje hladnjače</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
-    <style>
-        input:required,
-        select:required {
-            border: 3px solid red;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="jumbotron jumbotron-flex py-4 mb-2">
-        <h2>Izračunavanje potrebne količine sredstva za hlađenje vagona-hladnjače</h2>
-    </div>
-    <div class="container-fluid py-1">
-        <div class="row">
-            <div class="col-sm-5 text-justify">
-                <h3>Uputstvo:</h3>
-                <ul class="list-group">
-                    <li class="list-group-item">Popunjavaju se sva polja uokvirena crvenom bojom</li>
-                    <li class="list-group-item">U polja <span class="font-weight-bold font-italic">Masa robe</span> i <span class="font-weight-bold font-italic">Trajanje prevoza u časovima</span> upisuju se samo pozitivne vrednosti, dok se u polja <span class="font-weight-bold font-italic">Spoljna (vanjska) temperatura</span> i <span class="font-weight-bold font-italic">Temperatura proizvoda</span> mogu upisivati i negativne vrijednosti. </li>
-                    <li class="list-group-item">U aplikaciju se unose i prikazuju cijeli brojevi.</li>
-                    <li class="list-group-item">Nije potrebno vršiti pretvaranje fizičkih veličina (npr. <span class="font-italic">sate u minute ili sekunde</span> i <span class="font-italic">kilograme u grame</span>)</li>
-                </ul>
-            </div>
-            <div class="col-sm-7">
-                <div class="table-responsive">
-                    <form>
-                        <table class="table table-sm table-borderless">
-                            <tbody>
-                                <tr>
-                                    <td class="align-middle font-weight-bold"><label for="vrs">Vrsta rashladnog sredstva</label></td>
-                                    <td><select id="vrs" class="form-control" required>
-                                            <option selected disabled>Izaberite vrstu rashladnog sredstva</option>
-                                            <option value="80">Vodeni led</option>
-                                            <option value="150">Suvi led</option>
-                                            <option value="96.5">Tečni azot</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="align-middle font-weight-bold"><label for="gd">Godišnje doba</label></td>
-                                    <td><select id="gd" class="form-control" required>
-                                            <option selected disabled>Izaberite godišnje doba</option>
-                                            <option value="0.06">Ljeto</option>
-                                            <option value="0.01">Zima</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="align-middle font-weight-bold"><label for="mr">Masa robe [kg]</label></td>
-                                    <td><input type="number" id="mr" class="form-control" min="1" value="" skip="1" required /></td>
-                                </tr>
-                                <tr>
-                                    <td class="align-middle font-weight-bold"><label for="tp">Trajanje prevoza u časovima [h]</label></td>
-                                    <td><input type="number" id="tp" class="form-control" min="1" value="" skip="1" required /></td>
-                                </tr>
-                                <tr>
-                                    <td class="align-middle font-weight-bold"><label for="ts">Spoljna (vanjska) temperatura[&#8451;]</label></td>
-                                    <td><input type="number" id="ts" class="form-control" value="" skip="1" required /></td>
-                                </tr>
-                                <tr>
-                                    <td class="align-middle font-weight-bold"><label for="tpr">Temperatura proizvoda [&#8451;]</label></td>
-                                    <td><input type="number" id="tpr" class="form-control" min="-50" max="50" value="" skip="1" required /></td>
-                                </tr>
-                                <tr>
-                                    <td class="align-middle font-weight-bold"><label for="str">Specifična toplota robe [kcal/kg &#8451;]</label></td>
-                                    <td><select id="str" class="form-control" required>
-                                            <option selected disabled>Vrsta namirnice</option>
-                                            <option value="0.92">Svježe voće</option>
-                                            <option value="0.82">Riba</option>
-                                            <option value="0.80">Zaklana živina, margarin</option>
-                                            <option value="0.76">Jaja</option>
-                                            <option value="0.64">Sir</option>
-                                            <option value="0.40">Ulje</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><input type="button" class="btn btn-primary" value="Izračunaj" onclick="izracunaj()" /></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </form>
-                    <div id="rezultat"></div>
-                    <div id="rezultat2"></div>
-                    <div id="rezultat3"></div>
-                    <div id="rezultat4"></div>
-                    <div id="rezultat5"></div>
-                    <div id="rezultat6"></div>
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" data-focus="true" id="helpModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header py-0 pr-0">
+                    <h5 class="modal-title py-1">Pomoć</h5>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Zatvori"><span
+                            aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body text-justify">
+                    <ul class="list-group">
+                        <li class="list-group-item">Moraju biti popunjena sva polja koja se nalaze u priloženoj formi.
+                        </li>
+                        <li class="list-group-item">U polja <span class="font-weight-bold font-italic">Masa robe</span>
+                            i
+                            <span class="font-weight-bold font-italic">Trajanje prevoza u časovima</span> se unose samo
+                            pozitivni cijeli brojevi.
+                        </li>
+                        <li class="list-group-item"> U polja <span class="font-weight-bold font-italic">Spoljna
+                                (vanjska)
+                                temperatura</span> i <span class="font-weight-bold font-italic">Temperatura
+                                proizvoda</span>
+                            mogu se, pored pozitivnih cijelih brojeva, birati i negativni cijeli brojevi.
+                        </li>
+                        <li class="list-group-item">Nije potrebno vršiti pretvaranje fizičkih veličina (npr. <span
+                                class="font-italic">sate u minute ili sekunde</span> i <span
+                                class="font-italic">kilograme u
+                                grame</span>)</li>
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
+    <header class="jumbotron jumbotron-fluid mb-2 px-1 py-3 clearfix">
+        <div class="float-right">
+            <button class="btn btn-info" type="button" data-toggle="modal" data-target="#helpModal"><i
+                    class="bi bi-question-circle pr-1"></i>Pomoć</button>
+            <a href="https://github.com/BaleshSrle/ICBL_HomeWork_01" class="btn btn-dark" role="button"
+                target="_blank"><i class="bi bi-github" role="img"
+                    aria-label="GitHub"></i></a>
+        </div>
+        <div class="float-left">
+            <h2>Izračunavanje potrebne količine sredstva za hlađenje vagona-hladnjače</h2>
+        </div>
+    </header>
+    <div class="container-fluid py-1">
+        <div class="row">
+            <div class="col-sm-6">
+                <form>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label for="vrs" class="input-group-text">Vrsta rashladnog sredstva</label>
+                        </div>
+                        <select id="vrs" class="form-control" required>
+                            <option selected disabled>Izaberite rashladno sredstvo</option>
+                            <option value="80">Vodeni led</option>
+                            <option value="150">Suvi led</option>
+                            <option value="96.5">Tečni azot</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label for="gd" class="input-group-text">Godišnje doba</label>
+                        </div>
+                        <select id="gd" class="form-control" required>
+                            <option selected disabled>Izaberite godišnje doba</option>
+                            <option value="0.06">Ljeto</option>
+                            <option value="0.01">Zima</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label for="mr" class="input-group-text" data-toogle="tooltip" data-placement="top"
+                                title="U ovo polje se unosi pozitivni cijeli broj.">Masa robe [kg]</label>
+                        </div>
+                        <input type="number" id="mr" class="form-control" min="1" value="" skip="1" required />
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label for="tp" class="input-group-text">Trajanje prevoza u časovima [h]</label>
+                        </div>
+                        <input type="number" id="tp" class="form-control" min="1" value="" skip="1" required />
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label for="ts" class="input-group-text">Spoljna (vanjska) temperatura[&#8451;]</label>
+                        </div>
+                        <div class="input-group-append">
+                            <input type="number" id="tsOutput" class="input-group-text p-1" readonly size="3"
+                                maxlength="3" style="width: 48px;" />
+                        </div>
+                        <input type="range" id="ts" class="form-control" oninput="tsOutput.value = ts.value" min="-50"
+                            max="50" value="0" skip="1" required />
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label for="tpr" class="input-group-text">Temperatura proizvoda [&#8451;]</label>
+                        </div>
+                        <div class="input-group-append">
+                            <input type="number" id="tprOutput" class="input-group-text p-1" readonly size="3"
+                                maxlength="3" style="width: 48px;" />
+                        </div>
+                        <input type="range" id="tpr" class="form-control" oninput="tprOutput.value = tpr.value"
+                            min="-50" max="50" value="0" skip="1" required />
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label for="str" class="input-group-text">Vrsta namirnice</label>
+                        </div>
+                        <select id="str" class="form-control" required>
+                            <option selected disabled>Izaberite namirnicu</option>
+                            <option value="0.92">Svježe voće</option>
+                            <option value="0.82">Riba</option>
+                            <option value="0.80">Zaklana živina, margarin</option>
+                            <option value="0.76">Jaja</option>
+                            <option value="0.64">Sir</option>
+                            <option value="0.40">Ulje</option>
+                        </select>
+                    </div>
+                    <div class="float-right">
+                        <button type="button" class="btn btn-primary" onclick="izracunaj()">Izračunaj</button>
+                        <button type="reset" class="btn btn-danger" onclick="izracunaj()">Poništi</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-6">
+                <div id="rezultat"></div>
+                <div id="rezultat2"></div>
+                <div id="rezultat3"></div>
+                <div id="rezultat4"></div>
+                <div id="rezultat5"></div>
+                <div id="rezultat6"></div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/gh/BaleshSrle/ICBL_HomeWork_01@main/skripta.min.js"></script>
 
