@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1/font/bootstrap-icons.min.css">
     <title>Izračunavanje potrebne količine sredstva za hlađenje hladnjače</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -51,8 +50,7 @@
             <button class="btn btn-info" type="button" data-toggle="modal" data-target="#helpModal"><i
                     class="bi bi-question-circle pr-1"></i>Pomoć</button>
             <a href="https://github.com/BaleshSrle/ICBL_HomeWork_01" class="btn btn-dark" role="button"
-                target="_blank"><i class="bi bi-github" role="img"
-                    aria-label="GitHub"></i></a>
+                target="_blank"><i class="bi bi-github" role="img" aria-label="GitHub"></i></a>
         </div>
         <div class="float-left">
             <h2>Izračunavanje potrebne količine sredstva za hlađenje vagona-hladnjače</h2>
@@ -68,9 +66,9 @@
                         </div>
                         <select id="vrs" class="form-control" required>
                             <option selected disabled>Izaberite rashladno sredstvo</option>
-                            <option value="80">Vodeni led</option>
-                            <option value="150">Suvi led</option>
-                            <option value="96.5">Tečni azot</option>
+                            <option value="80" label="Vodeni led">Vodeni led</option>
+                            <option value="150" label="Suvi led">Suvi led</option>
+                            <option value="96.5" label="Tečni azot">Tečni azot</option>
                         </select>
                     </div>
                     <div class="input-group mb-3">
@@ -79,8 +77,8 @@
                         </div>
                         <select id="gd" class="form-control" required>
                             <option selected disabled>Izaberite godišnje doba</option>
-                            <option value="0.06">Ljeto</option>
-                            <option value="0.01">Zima</option>
+                            <option value="0.06" label="Ljeto">Ljeto</option>
+                            <option value="0.01" label="Zima">Zima</option>
                         </select>
                     </div>
                     <div class="input-group mb-3">
@@ -124,12 +122,12 @@
                         </div>
                         <select id="str" class="form-control" required>
                             <option selected disabled>Izaberite namirnicu</option>
-                            <option value="0.92">Svježe voće</option>
-                            <option value="0.82">Riba</option>
-                            <option value="0.80">Zaklana živina, margarin</option>
-                            <option value="0.76">Jaja</option>
-                            <option value="0.64">Sir</option>
-                            <option value="0.40">Ulje</option>
+                            <option value="0.92" label="Svježe voće i povrće">Svježe voće i povrće</option>
+                            <option value="0.82" label="Riba">Riba</option>
+                            <option value="0.80" label="Zaklana živina, margarin">Zaklana živina, margarin</option>
+                            <option value="0.76" label="Jaja">Jaja</option>
+                            <option value="0.64" label="Sir">Sir</option>
+                            <option value="0.40" label="Ulje">Ulje</option>
                         </select>
                     </div>
                     <div class="float-right">
