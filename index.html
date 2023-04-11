@@ -34,7 +34,8 @@
                                 (vanjska)
                                 temperatura</span> i <span class="font-weight-bold font-italic">Temperatura
                                 proizvoda</span>
-                            mogu se, pored pozitivnih cijelih brojeva, birati i negativni cijeli brojevi.
+                            mogu se, pored pozitivnih cijelih brojeva, birati i negativni cijeli brojevi (minimalna
+                            temperatura je definisana na -50 &#8451;, a maksimalna temperatura je definisana na +50 &#8451;).
                         </li>
                         <li class="list-group-item">Nije potrebno vršiti pretvaranje fizičkih veličina (npr. <span
                                 class="font-italic">sate u minute ili sekunde</span> i <span
@@ -96,25 +97,27 @@
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <label for="ts" class="input-group-text">Spoljna (vanjska) temperatura[&#8451;]</label>
+                            <label for="ts" class="input-group-text">Spoljna (vanjska) temperatura [&#8451;]</label>
                         </div>
-                        <div class="input-group-append">
+                        <!-- <div class="input-group-append">
                             <input type="number" id="tsOutput" class="input-group-text p-1" readonly size="3"
                                 maxlength="3" style="width: 48px;" />
-                        </div>
-                        <input type="range" id="ts" class="form-control" oninput="tsOutput.value = ts.value" min="-50"
-                            max="50" value="0" skip="1" required />
+                        </div> -->
+                        <!-- <input type="range" id="ts" class="form-control" oninput="tsOutput.value = ts.value" min="-50"
+                            max="50" value="0" skip="1" required /> -->
+                        <input type="number" id="ts" class="form-control" min="-50" max="50" step="1" required/>
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <label for="tpr" class="input-group-text">Temperatura proizvoda [&#8451;]</label>
                         </div>
-                        <div class="input-group-append">
+                        <!-- <div class="input-group-append">
                             <input type="number" id="tprOutput" class="input-group-text p-1" readonly size="3"
                                 maxlength="3" style="width: 48px;" />
-                        </div>
-                        <input type="range" id="tpr" class="form-control" oninput="tprOutput.value = tpr.value"
-                            min="-50" max="50" value="0" skip="1" required />
+                        </div> -->
+                        <!-- <input type="range" id="tpr" class="form-control" oninput="tprOutput.value = tpr.value"
+                            min="-50" max="50" value="0" skip="1" required /> -->
+                        <input type="number" id="tpr" class="form-control" min="-50" max="50" step="1" required/>
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -148,5 +151,6 @@
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/gh/BaleshSrle/ICBL_HomeWork_01@main/skripta.min.js"></script>
+<!-- <script src="skripta.js"></script> -->
 
 </html>

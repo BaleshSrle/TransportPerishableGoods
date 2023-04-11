@@ -7,7 +7,7 @@ function izracunaj() {
     var f = $("#tpr").val();
     var g = $("#str").val();
 
-    if (c <= 0 || c == "e" ||  d <= 0 || d == "e") {
+    if (Number(c <= 0) || Number(d <= 0) || Number(e <= "-51") || Number(e >= "51") || Number(f <= "-51") || Number(f >= "51")) {
         alert("Unos nije dozvoljen.\nMolimo vas da pažljivo pročitate uputstvo.");
     }
     
@@ -48,26 +48,26 @@ function izracunaj() {
     if (e >= 20 && b == 0.06) {
         lu = l * b;
         l1 = l + lu;
-        $("#rezultat6").html("Potrebna količina rashladnog sredstva, koja je uvećana za 6% u ljetnim mjesecima, iznosi " + l1.toFixed(0) + "[kg].");
+        $("#rezultat6").text("Potrebna količina rashladnog sredstva, koja je uvećana za 6% u ljetnim mjesecima, iznosi " + l1.toFixed(0) + "[kg].");
     }
 
-        $("#rezultat").html("Potrebna količina rashadnog sredstva za hlađenje vagona hladnjače je " + q11.toFixed(0) + " [kg].");
+        $("#rezultat").text("Potrebna količina rashadnog sredstva za hlađenje vagona hladnjače je " + q11.toFixed(0) + " [kg].");
 
         if (q22 != 0) {
-            $("#rezultat2").html("Potrebna količina rashadnog sredstva za hlađenje robe je " + q22.toFixed(0) + " [kg].");
+            $("#rezultat2").text("Potrebna količina rashadnog sredstva za hlađenje robe je " + q22.toFixed(0) + " [kg].");
         } else {
-            $("#rezultat2").html("Nije potrebno računari koliko je potrebno rashladnog sredstva za hlađenje robe, jer je roba prethodno ohlađena.");
+            $("#rezultat2").text("Nije potrebno računari koliko je potrebno rashladnog sredstva za hlađenje robe, jer je roba prethodno ohlađena.");
         }
 
-        $("#rezultat3").html("Potrebna količina rashadnog sredstva za uticaj spoljne temperature je " + q33.toFixed(0) + " [kg].");
+        $("#rezultat3").text("Potrebna količina rashadnog sredstva za uticaj spoljne temperature je " + q33.toFixed(0) + " [kg].");
 
         if (q43 != 0) {
-            $("#rezultat4").html("Potrebna količina rashadnog sredstva za uticaj disanja robe je " + q43.toFixed(0) + " [kg].");
+            $("#rezultat4").text("Potrebna količina rashadnog sredstva za uticaj disanja robe je " + q43.toFixed(0) + " [kg].");
         } else if (q43 = 0 && f <= -19 && f >= -40) {
             $("#rezultat4").html("Nije potrebno računati potrebnu količinu rashladnog sredstva za uticaj disanja robe, jer roba u brzo smrznutom stanju &quot;ne diše&quot;.");
         } else {
             $("#rezultat4").html("Nije potrebno računati potrebnu količinu rashladnog sredstva za uticaj disanja robe, jer roba u smrznutom stanju &quot;ne diše&quot;.");
         }
         
-        $("#rezultat5").html("Potrebna količina rashladnog sredstva iznosi " + l + "[kg].");
+        $("#rezultat5").text("Potrebna količina rashladnog sredstva iznosi " + l + "[kg].");
 }
