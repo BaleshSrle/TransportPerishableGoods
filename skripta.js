@@ -72,3 +72,16 @@ function izracunaj() {
         $("#rezultat5").text("Potrebna količina rashladnog sredstva iznosi " + l + "[kg].");
     }
 }
+
+$(document).ready(function () {
+    $("div.input-group").addClass("mb-3");
+    $("div.input-group:lt(6):gt(1)").tooltip({
+        placement: 'top',
+        title: 'U ovo polje se unosi pozitivni cijeli broj.'
+    });
+    $("label").addClass("input-group-text");
+    $("select, input").addClass("form-control").attr("required", "");
+    $("input[type='number']").attr("inputmode", "numeric");
+    $("input#mr, input#tp").attr({ "min": "1", "skip": "1" });
+    $("input#ts, input#tpr").attr({ "min": "-50", "max": "50", "step": "1" });
+});
