@@ -83,5 +83,5 @@ $(document).ready(function () {
     $("select, input").addClass("form-control").attr("required", "");
     $("input[type='number']").attr("inputmode", "numeric");
     $("input#mr, input#tp").attr({ "min": "1", "skip": "1" });
-    $("input#ts, input#tpr").attr({ "min": "-50", "max": "50", "step": "1" });
+    $("input#ts, input#tpr").attr({ "min": "-50", "max": "50", "step": "1", "pattern": "-?[0-9]{2}" });
 });
