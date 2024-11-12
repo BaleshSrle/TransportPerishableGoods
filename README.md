@@ -10,7 +10,8 @@ Creating a web application based on what I have studied at University of East Sa
 
 Using this Web Application, you can calculate how much of Dry Ice, (Water) Ice & Liquid Nitrogen will be needed for transporting (perishable) goods during the year.
 
-To use this app, you need to know Serbian language (or Serbo-Croatian language, if you are born in former Socialist Federal Republic of Yugoslavia).
+> [!NOTE]
+> To use this app, you need to know Serbian language (or Serbo-Croatian language, if you are born in former Socialist Federal Republic of Yugoslavia).
 
 ## Built With
 This project assignment is created by [![Bootstrap Badge](https://img.shields.io/github/v/release/twbs/bootstrap?filter=v4.*&logo=bootstrap&logoColor=white&label=Bootstrap&color=7952b3
