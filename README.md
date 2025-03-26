@@ -4,7 +4,7 @@
 
 # Transport of Perishable Goods 
 
-Creating a web application based on what I have studied at University of East Sarajevo - Faculty of Transport and Traffic Engineering.
+Creating a web application based on what I have studied at University of East Sarajevo - Faculty of Transport and Traffic Engineering in Doboj.
 
 ## Utilisation
 
