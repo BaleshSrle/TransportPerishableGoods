@@ -1,7 +1,8 @@
-<!-- [![](https://data.jsdelivr.com/v1/package/gh/BaleshSrle/TransportPerishableGoods/badge?style=rounded)](https://www.jsdelivr.com/package/gh/BaleshSrle/TransportPerishableGoods)
-[![Open in Visual Studio Code](https://img.shields.io/badge/Open_in_Visual_Studio_Code-007acc)](https://open.vscode.dev/BaleshSrle/TransportPerishableGoods)
-[![pages-build-deployment](https://github.com/BaleshSrle/baleshsrle.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/BaleshSrle/baleshsrle.github.io/actions/workflows/pages/pages-build-deployment)
-![Website](https://img.shields.io/website?url=https%3A%2F%2Fbaleshsrle.github.io%2F&logo=bootstrap&logoColor=white&labelColor=7952B3) -->
+[![](https://data.jsdelivr.com/v1/package/gh/BaleshSrle/SFDobojWebAppCollection/badge?style=rounded)](https://www.jsdelivr.com/package/gh/BaleshSrle/SFDobojWebAppCollection)
+[![Open in Visual Studio Code](https://img.shields.io/badge/Open_in_Visual_Studio_Code-007acc)](https://open.vscode.dev/BaleshSrle/SFDobojWebAppCollection)
+[![Deploy static content to Pages](https://github.com/BaleshSrle/SFDobojWebAppCollection/actions/workflows/static.yml/badge.svg?branch=main)](https://github.com/BaleshSrle/SFDobojWebAppCollection/actions/workflows/static.yml)
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fbaleshsrle.github.io%2F%SFDobojWebAppCollection2F&logo=bootstrap&logoColor=white&labelColor=7952B3)
+[![Bitly](https://img.shields.io/badge/Bitly-ee6123?&logo=bitly&logoColor=white&labelColor=555555)](https://bit.ly/4cuU243)
 
 # Faculty of Transport and Traffic Engineering Doboj Web App Collection
 
