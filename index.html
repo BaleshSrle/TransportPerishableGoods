@@ -1,155 +1,304 @@
 <!DOCTYPE html>
-<html lang="sr-BA">
+<html lang="sr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1/font/bootstrap-icons.min.css">
-    <title>Izračunavanje potrebne količine sredstva za hlađenje hladnjače</title>
+    <title>Kolekcija aplikacija sa studente Saobraćajnog fakulteta u Doboju</title>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="js/script.js"></script> -->
 </head>
 
 <body>
-    <div class="modal fade" data-backdrop="static" data-keyboard="false" data-focus="true" id="helpModal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header py-0 pr-0">
-                    <h5 class="modal-title py-1">Pomoć</h5>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Zatvori"><span
-                            aria-hidden="true">&times;</span></button>
+    <div class="container-fluid">
+        <div class="accordion" id="accordionApp">
+            <div class="card">
+                <div class="card-header" id="index">
+                    <h2>
+                        <button data-target="#collapseIndex" aria-expanded="true" aria-controls="collapseIndex">
+                            Početna
+                        </button>
+                    </h2>
                 </div>
-                <div class="modal-body text-justify">
-                    <ul class="list-group">
-                        <li class="list-group-item">Sva polja koja se nalaze u priloženoj formi moraju biti popunjena.
-                        </li>
-                        <li class="list-group-item">U polja <var class="font-weight-bold">Masa robe</var>
-                            i
-                            <var class="font-weight-bold">Trajanje prevoza u časovima</var> se unose samo
-                            pozitivni cijeli brojevi.
-                        </li>
-                        <li class="list-group-item"> U polja <var class="font-weight-bold">Spoljna
-                                (vanjska)
-                                temperatura</var> i <var class="font-weight-bold">Temperatura
-                                proizvoda</var>
-                            mogu se, pored pozitivnih cijelih brojeva, birati i unositi i negativni cijeli brojevi
-                            (minimalna
+                <div id="collapseIndex" class="collapse show" aria-labelledby="headingIndex">
+                    <div class="card-body">
+                        <p>Ovaj kolekcija aplikacija je nastala od dva projekta / web aplikacije, koje su nastale u
+                            drugoj polovini 2019. godine.</p>
+                        <div class="alert">
+                            <h4>Napomena</h4>
+                            <p>Ova kolekcija aplikacija je namjenjena za sve korisnike iz<span class="fi fi-rs"
+                                    title="Srbija"></span>,<span class="fi fi-me" title="Crna Gora"></span>,<span
+                                    class="fi fi-ba" title="Bosna i Hercegovina"></span>i<span class="fi fi-hr"
+                                    title="Hrvatska"></span>.
+                            </p>
+                        </div>
+                        <hr>
+                        <h5>Izračunavanje potrebne količine sredstva za hlađenje vagona-hladnjače</h5>
+                        <p>Korištenjem ove aplikacije, možete da izračunate koliko je potrebno suvog leda, (vodenog)
+                            leda i tečnog azota da bi se transportovala lakokvarljiva roba tokom godine.</p>
+                        <p>Prilikom korištenja ove aplikacije, sva polja moraju biti popunjena.</p>
+                        <p>U polja<var>Masa robe</var>i<var>Trajanje prevoza robe u časovima</var>se unose samo
+                            pozitivni cijeli brojevi.</p>
+                        <p> U polja<var>Spoljna (vanjska) temperatura</var>i<var>Temperatura proizvoda</var>mogu se,
+                            pored pozitivnih cijelih brojeva, birati i unositi i negativni cijeli brojevi (minimalna
                             temperatura je definisana na -50 &#8451;, a maksimalna temperatura je definisana na +50
-                            &#8451;).
-                        </li>
-                        <li class="list-group-item">Nije potrebno vršiti pretvaranje fizičkih veličina (npr. <span
-                                class="font-italic">sate u minute ili sekunde</span> i <span
-                                class="font-italic">kilograme u
-                                grame</span>)</li>
-                    </ul>
+                            &#8451;).</p>
+                        <p>Nije potrebno vršiti pretvaranje fizičkih veličina (npr. <span>sate u minute ili
+                                sekunde</span> i <span>kilograme u grame</span>).</p>
+                        <hr>
+                        <h5>ADR - Transport opasnih materija - Identifikacioni brojevi opasnosti i njihova značenja</h5>
+                        <p class="mb-0">Korištenjem ove aplikacije, možete da se okvirno informišete o tome koja vrsta
+                            opasne
+                            materije se transportuje vozom, kamionom, kombijem ili nekim drugim (lakim) dostavnim
+                            vozilom.</p>
+                        <div class="alert">
+                            <h4>Info</h4>
+                            <p>Podaci za ovu web aplikaciju su iskorišteni iz skripte <strong>Transport opasnih materija
+                                    - ADR 2007</strong> čiji su autori Mr. Velibor Peulić, Radovan Višković i Željko
+                                Matoc</p>
+                        </div>
+                        <figure>
+                            <img src="https://api.inpart24.com/uploads/yoofp01b.nze_adr-plate.jpg">
+                            <figcaption>Primjer naranžastog obilježja sa brojem za obilježavanje opasnosti (HIN) i UN
+                                brojem</figcaption>
+                        </figure>
+                        <p>U polju<var>Izaberite identifikacioni broj opasnosti</var>potrebno je da izaberete neku od
+                            ponuđenih oznaka, a njeno značenje će odmah biti prikazano.</p>
+                    </div>
+                    <div class="card-footer">
+                        <p>Ovaj projekat koristi<img
+                                src="https://img.shields.io/github/v/release/twbs/bootstrap?filter=v4.*&logo=bootstrap&logoColor=white&label=Bootstrap&color=7952b3"
+                                alt="Bootstrap Badge">,<img
+                                src="https://img.shields.io/github/v/release/jquery/jquery?filter=3.*&logo=jquery&logoColor=white&label=jQuery&color=0769ad"
+                                alt="jQuery Badge">preko<img
+                                src="https://img.shields.io/badge/jsDelivr-e84d3d?logo=jsdelivr&logoColor=white&labelColor=555555"
+                                alt="jsDelivr Badge">CDN servera i hostovan je na<img
+                                src="https://img.shields.io/badge/by%20GitHub-181717?logo=githubpages&logoColor=white&logoSize=auto&labelColor=222222"
+                                alt="GitHub Pages Badge">.<!--<br>HTML kod ove stranice možete vidjeti na<object data="https://img.shields.io/badge/GitHub-181717?logo=github&logoSize=auto&labelColor=555555&link=https%3A%2F%2Fgithub.com%2FBaleshSrle%2Fbaleshsrle.github.io"></object>.--><br><span></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="TransportProduce">
+                    <h2>
+                        <button data-target="#collapseTransportProduce" aria-expanded="false"
+                            aria-controls="collapseTransportProduce">
+                            Izračunavanje potrebne količine sredstva za hlađenje vagona-hladnjače
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTransportProduce" class="collapse" aria-labelledby="headingTransportProduce">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <form>
+                                    <div class="input-group">
+                                        <div>
+                                            <span>Vrsta rashladnog sredstva</span>
+                                        </div>
+                                        <select id="vrs">
+                                            <option selected disabled>Izaberite rashladno sredstvo</option>
+                                            <option value="80" label="Vodeni led">Vodeni led</option>
+                                            <option value="150" label="Suvi led">Suvi led</option>
+                                            <option value="96.5" label="Tečni azot">Tečni azot</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span>Godišnje doba</span>
+                                        </div>
+                                        <select id="gd" required>
+                                            <option selected disabled>Izaberite godišnje doba</option>
+                                            <option value="0.06" label="Ljeto">Ljeto</option>
+                                            <option value="0.01" label="Zima">Zima</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span>Masa robe [kg]</span>
+                                        </div>
+                                        <input type="number" id="mr" value="">
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span>Trajanje prevoza u časovima [h]</span>
+                                        </div>
+                                        <input type="number" id="tp" value="">
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span>Spoljna (vanjska) temperatura [&#8451;]<span>
+                                        </div>
+                                        <!-- <div class="input-group-append">
+                                            <input type="number" id="tsOutput" class="input-group-text p-1" readonly size="3"
+                                                maxlength="3" style="width: 48px;">
+                                        </div> -->
+                                        <!-- <input type="range" id="ts" oninput="tsOutput.value = ts.value" value="0"> -->
+                                        <input type="number" id="ts" value="">
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span>Temperatura proizvoda [&#8451;]</span>
+                                        </div>
+                                        <!-- <div class="input-group-append">
+                                            <input type="number" id="tprOutput" class="input-group-text p-1" readonly size="3"
+                                                maxlength="3" style="width: 48px;">
+                                        </div> -->
+                                        <!-- <input type="range" id="tpr" oninput="tprOutput.value = tpr.value" value="0"> -->
+                                        <input type="number" id="tpr" value="">
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span>Vrsta namirnice</span>
+                                        </div>
+                                        <select id="str" required>
+                                            <option selected disabled>Izaberite namirnicu</option>
+                                            <option value="0.92" label="Svježe voće i povrće">Svježe voće i povrće
+                                            </option>
+                                            <option value="0.82" label="Riba">Riba</option>
+                                            <option value="0.80" label="Zaklana živina, margarin">Zaklana živina,
+                                                margarin</option>
+                                            <option value="0.76" label="Jaja">Jaja</option>
+                                            <option value="0.64" label="Sir">Sir</option>
+                                            <option value="0.40" label="Ulje">Ulje</option>
+                                        </select>
+                                    </div>
+                                    <div class="float-right">
+                                        <button class="btn btn-primary">Izračunaj</button>
+                                        <button type="reset" class="btn btn-danger">Poništi</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-6">
+                                <p id="rezultat"></p>
+                                <p id="rezultat2"></p>
+                                <p id="rezultat3"></p>
+                                <p id="rezultat4"></p>
+                                <p id="rezultat5"></p>
+                                <p id="rezultat6"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="ADR">
+                    <h2>
+                        <button data-target="#collapseADR" aria-expanded="false" aria-controls="collapseADR">
+                            ADR - Transport opasnih materija - Identifikacioni brojevi opasnosti i njihovo značenje
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseADR" class="collapse" aria-labelledby="headingADR">
+                    <div class="card-body">
+                        <form>
+                            <select id="ibo">
+                                <option selected disabled>Izaberite identifikacioni broj opasnosti</option>
+                                <option value="1">20</option>
+                                <option value="2">22</option>
+                                <option value="3">223</option>
+                                <option value="4">225</option>
+                                <option value="5">23</option>
+                                <option value="6">239</option>
+                                <option value="7">25</option>
+                                <option value="8">26</option>
+                                <option value="9">263</option>
+                                <option value="10">265</option>
+                                <option value="11">268</option>
+                                <option value="12">30</option>
+                                <option value="13">323</option>
+                                <option value="14">x323</option>
+                                <option value="15">33</option>
+                                <option value="16">333</option>
+                                <option value="17">x333</option>
+                                <option value="18">336</option>
+                                <option value="19">338</option>
+                                <option value="20">x338</option>
+                                <option value="21">339</option>
+                                <option value="22">36</option>
+                                <option value="23">362</option>
+                                <option value="24">x362</option>
+                                <option value="25">368</option>
+                                <option value="26">38</option>
+                                <option value="27">382</option>
+                                <option value="28">x382</option>
+                                <option value="29">39</option>
+                                <option value="30">40</option>
+                                <option value="31">423</option>
+                                <option value="32">x423</option>
+                                <option value="33">43</option>
+                                <option value="34">44</option>
+                                <option value="35">446</option>
+                                <option value="36">46</option>
+                                <option value="37">462</option>
+                                <option value="38">x462</option>
+                                <option value="39">48</option>
+                                <option value="40">482</option>
+                                <option value="41">x482</option>
+                                <option value="42">50</option>
+                                <option value="43">539</option>
+                                <option value="44">55</option>
+                                <option value="45">556</option>
+                                <option value="46">558</option>
+                                <option value="47">559</option>
+                                <option value="48">56</option>
+                                <option value="49">568</option>
+                                <option value="50">58</option>
+                                <option value="51">59</option>
+                                <option value="52">60</option>
+                                <option value="53">606</option>
+                                <option value="54">623</option>
+                                <option value="55">63</option>
+                                <option value="56">638</option>
+                                <option value="57">639</option>
+                                <option value="58">839</option>
+                                <option value="59">x839</option>
+                                <option value="60">84</option>
+                                <option value="61">842</option>
+                                <option value="62">85</option>
+                                <option value="63">856</option>
+                                <option value="64">86</option>
+                                <option value="65">88</option>
+                                <option value="66">x88</option>
+                                <option value="67">883</option>
+                                <option value="68">884</option>
+                                <option value="69">885</option>
+                                <option value="70">886</option>
+                                <option value="71">x886</option>
+                                <option value="72">89</option>
+                                <option value="73">90</option>
+                                <option value="74">99</option>
+                            </select>
+                            <!-- <div class="form-group form-group-lg">
+                                <label for="ibo" class="col-sm-3 control-label">Identifikacioni broj
+                                    opasnosti</label>
+                                <div class="col-sm-9">
+                                    
+                                </div>
+                            </div> -->
+                        </form>
+                        <h5 class="pt-3">Značenje identifikaciong broja opasnosti</h5>
+                        <!-- <p class="card-text my-3"></p> -->
+                        <p class="card-text"></p>
+                        <p class="text-muted mb-0">* Voda se smije koristiti samo uz odobrenje stručnjaka.<br>Neke
+                            opasne materije burno
+                            reaguju u kontaktu sa vodom (od ispuštanja otrovnih gasova do samozapaljenja), zato je
+                            potrebno pažljivo
+                            rukovanje sa vodom.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <header class="jumbotron jumbotron-fluid mb-2 px-1 py-3 clearfix">
-        <div class="float-right">
-            <button class="btn btn-info" type="button" data-toggle="modal" data-target="#helpModal"><i
-                    class="bi bi-question-circle pr-1"></i>Pomoć</button>
-            <a href="https://github.com/BaleshSrle/TransportPerishableGoods" class="btn btn-dark" role="button"
-                target="_blank"><i class="bi bi-github" role="img" aria-label="GitHub"></i></a>
-        </div>
-        <div class="float-left">
-            <h2>Izračunavanje potrebne količine sredstva za hlađenje vagona-hladnjače</h2>
-        </div>
-    </header>
-    <div class="container-fluid py-1">
-        <div class="row">
-            <div class="col-sm-6">
-                <form>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label for="vrs">Vrsta rashladnog sredstva</label>
-                        </div>
-                        <select id="vrs">
-                            <option selected disabled>Izaberite rashladno sredstvo</option>
-                            <option value="80" label="Vodeni led">Vodeni led</option>
-                            <option value="150" label="Suvi led">Suvi led</option>
-                            <option value="96.5" label="Tečni azot">Tečni azot</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label for="gd">Godišnje doba</label>
-                        </div>
-                        <select id="gd" required>
-                            <option selected disabled>Izaberite godišnje doba</option>
-                            <option value="0.06" label="Ljeto">Ljeto</option>
-                            <option value="0.01" label="Zima">Zima</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label for="mr">Masa robe [kg]</label>
-                        </div>
-                        <input type="number" id="mr" value="">
-                    </div>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label for="tp">Trajanje prevoza u časovima [h]</label>
-                        </div>
-                        <input type="number" id="tp" value="">
-                    </div>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label for="ts">Spoljna (vanjska) temperatura [&#8451;]</label>
-                        </div>
-                        <!-- <div class="input-group-append">
-                            <input type="number" id="tsOutput" class="input-group-text p-1" readonly size="3"
-                                maxlength="3" style="width: 48px;">
-                        </div> -->
-                        <!-- <input type="range" id="ts" oninput="tsOutput.value = ts.value" value="0"> -->
-                        <input type="number" id="ts" value="">
-                    </div>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label for="tpr">Temperatura proizvoda [&#8451;]</label>
-                        </div>
-                        <!-- <div class="input-group-append">
-                            <input type="number" id="tprOutput" class="input-group-text p-1" readonly size="3"
-                                maxlength="3" style="width: 48px;">
-                        </div> -->
-                        <!-- <input type="range" id="tpr" oninput="tprOutput.value = tpr.value" value="0"> -->
-                        <input type="number" id="tpr" value="">
-                    </div>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label for="str">Vrsta namirnice</label>
-                        </div>
-                        <select id="str" required>
-                            <option selected disabled>Izaberite namirnicu</option>
-                            <option value="0.92" label="Svježe voće i povrće">Svježe voće i povrće</option>
-                            <option value="0.82" label="Riba">Riba</option>
-                            <option value="0.80" label="Zaklana živina, margarin">Zaklana živina, margarin</option>
-                            <option value="0.76" label="Jaja">Jaja</option>
-                            <option value="0.64" label="Sir">Sir</option>
-                            <option value="0.40" label="Ulje">Ulje</option>
-                        </select>
-                    </div>
-                    <div class="float-right">
-                        <button type="button" class="btn btn-primary">Izračunaj</button>
-                        <button type="reset" class="btn btn-danger">Poništi</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-sm-6">
-                <div id="rezultat"></div>
-                <div id="rezultat2"></div>
-                <div id="rezultat3"></div>
-                <div id="rezultat4"></div>
-                <div id="rezultat5"></div>
-                <div id="rezultat6"></div>
-            </div>
-        </div>
-    </div>
-    <!-- <script src="https://cdn.jsdelivr.net/gh/BaleshSrle/ICBL_HomeWork_01@main/skripta.min.js"></script> -->
-    <script src="skripta.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.getScript("js/script.js");
+        });
+    </script>
 </body>
 
 </html>
