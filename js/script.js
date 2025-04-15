@@ -8,7 +8,8 @@ $(document).ready(function () {
         $(this).append("<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css'>", "<link rel='dns-prefetch' href='https://cdn.jsdelivr.net/'>", "<link rel='preconnect' href='https://cdn.jsdelivr.net/'>", "<link rel='prefetch' href='https://img.shields.io/'>");
         $(this).children("link[rel='stylesheet'], link[rel='preconnect'], script:lt(2)").attr("crossorigin", "anonymous");
     });
-    $("body").css("background", "url('https://upload.wikimedia.org/wikipedia/sr/6/68/Saobra%C4%87ajni_fakultet_Doboj.png') right bottom / 200px no-repeat fixed padding-box padding-box");
+    //$("body").css("background", "url('https://upload.wikimedia.org/wikipedia/sr/6/68/Saobra%C4%87ajni_fakultet_Doboj.png') right bottom / 200px no-repeat fixed padding-box padding-box");
+    $("body").css("background", "url('https://sf.ues.rs.ba/cir/wp-content/uploads/2024/04/LogoPng.png') right bottom / 200px no-repeat fixed padding-box padding-box");
     $("div.container-fluid").addClass("p-3")
     $("h2").each(function () {
         $(this).addClass("mb-0");
